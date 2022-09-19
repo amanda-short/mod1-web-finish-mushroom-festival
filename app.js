@@ -14,6 +14,7 @@ const friendsSection = document.getElementById('friends-section');
 let message = '';
 let mushrooms = [{ type: 'porcini' }, { type: 'chanterelle' }, { type: 'morel' }];
 
+
 let friends = [
     { name: 'Wilbur', satisfied: 0 },
     { name: 'Miss Piggy', satisfied: 0 },
@@ -47,8 +48,8 @@ huntMushroomsButton.addEventListener('click', () => {
             type: mushroomType.type,
         };
         // > add the new mushroom to the mushrooms state
+        mushrooms.push(mushroom);
     }
-
     message = foundMessage[found];
 
     displayMessage();
@@ -91,6 +92,11 @@ function displayMessage() {
 
 function displayMushrooms() {
     mushroomContainer.innerHTML = '';
+
+    for (let mushroom of mushrooms) {
+        const mushroomEl = renderMushroom(mushroom);
+        mushroomContainer.append(mushroomEl);
+    }
 
     // > loop the mushrooms
     // create a mushroom element using the renderMushroom function
