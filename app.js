@@ -20,7 +20,6 @@ let friends = [
     { name: 'Pumbaa', satisfied: 0 },
 ];
 
-// static types and probabilities
 const porcini = {
     type: 'porcini',
 };
@@ -81,7 +80,7 @@ sayGoodbyeButton.addEventListener('click', () => {
     displayFriends();
 });
 
-/* Display Functions */
+
 function displayMessage() {
     messageSection.textContent = message;
 }
